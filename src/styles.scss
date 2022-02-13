@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    margin: 0;
+}
+
+#demo-page section{height:100vh;background-color:#2d3436;position:relative;padding:0;overflow:hidden}#demo-page section span{position:absolute;pointer-events:none;background:#fff;-webkit-animation:animation 5s linear infinite;animation:animation 5s linear infinite}@-webkit-keyframes animation{0%{-webkit-transform:scale(0) translateY(0) rotate(10deg);transform:scale(0) translateY(0) rotate(10deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{-webkit-transform:scale(1) translateY(-500%) rotate(360deg);transform:scale(1) translateY(-500%) rotate(360deg);opacity:0}}@keyframes animation{0%{-webkit-transform:scale(0) translateY(0) rotate(10deg);transform:scale(0) translateY(0) rotate(10deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{-webkit-transform:scale(1) translateY(-500%) rotate(360deg);transform:scale(1) translateY(-500%) rotate(360deg);opacity:0}}
