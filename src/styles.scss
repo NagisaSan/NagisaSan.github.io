@@ -3,74 +3,42 @@ html, body {
     font-family: monospace;
 }
 
-// h1 {
-//     margin: 0;
-// }
-
-// #animated-background {
-//     height: 100%;
-//     left: 0;
-//     position: absolute;
-//     top: 0;
-//     width: 100vw;
-//     overflow:hidden;
-// }
-
-// #animated-background span {
-//     position:absolute;
-//     pointer-events:none;
-//     background:#fff;
-//     -webkit-animation:animation 5s linear infinite;
-//     animation:animation 5s linear infinite
-// }
-
-// @-webkit-keyframes animation {
-//     0% {
-//         -webkit-transform:scale(0) translateY(0) rotate(10deg);
-//         transform:scale(0) translateY(0) rotate(10deg);
-//         opacity:0
-//     }
-    
-//     10% {
-//         opacity:1
-//     }
-    
-//     90% {
-//         opacity:1
-//     }
-
-//     100% {
-//         -webkit-transform:scale(1) translateY(-500%) rotate(360deg);
-//         transform:scale(1) translateY(-500%) rotate(360deg);
-//         opacity:0
-//     }
-// }
-
-// @keyframes animation {
-//     0% {
-//         -webkit-transform:scale(0) translateY(0) rotate(10deg);
-//         transform:scale(0) translateY(0) rotate(10deg);
-//         opacity:0
-//     }
-    
-//     10% {
-//         opacity:1
-//     }
-    
-//     90% {
-//         opacity:1
-//     }
-    
-//     100% {
-//         -webkit-transform:scale(1) translateY(-500%) rotate(360deg);
-//         transform:scale(1) translateY(-500%) rotate(360deg);
-//         opacity:0
-//     }
-// }
-
-// .flex {
-//     align-items: center;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-// }
+p {
+    min-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: flex-end;
+    font-weight: bold;
+    color: orange;
+  
+    &:after {
+      content: "";
+        width: 10px;
+        height: 4px;
+        display: block;
+        background: white;
+        color: orange;
+        margin-bottom: 4px;
+        margin-left: 2px;
+        animation-duration: 350ms;
+        animation-name: fade2;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
+  }
+  
+  
+  @keyframes fade2 {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+      background-color: black;
+    }
+  }
+  
+  
+  

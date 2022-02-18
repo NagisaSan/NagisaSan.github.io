@@ -9,47 +9,38 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    let wrapper: any;
-    const sleep = (ms: any) => new Promise(resolve => setTimeout(resolve, ms));
-
-    async function writingAll(stringTarget: string, container: string) {
-      wrapper = document.querySelector('[' + container + ']');
-      const stringsContainer = document.getElementsByClassName(stringTarget);
-
-      while (wrapper) {
-        for (var i = 0; i < stringsContainer.length; i++) {
-          const string = stringsContainer[i].textContent;
-          await write(string);
-          await sleep(1000);
-          await erase();
-          await sleep(1000);
-        };
-      }
-    };
-
-    async function write(text: string | null) {
-      let index = 0;
-      if(text !== null){
-        while (index < text.length) {
-          const timeout = 100;
-          await sleep(timeout);
-          index++;
-          wrapper.innerHTML = text.substring(0, index);
-        }
-      }
-    };
-
-    async function erase() {
-      while (wrapper.textContent.length) {
-        const timeout = 100;
-        await sleep(timeout);
-        wrapper.textContent = wrapper.textContent.substring(0, wrapper.textContent.length - 2);
-      }
-    };
-
-    writingAll('item', 'data-text');
-    // writingAll('item2', 'data-text');
-    // writingAll('item3', 'data-text');
+  ngOnInit(): void { 
+    // application
+    var speed = 75;
+    var h1 = document.querySelector('h1');
+    var delay = h1.innerHTML.length * speed + speed;
+    
+    // type affect to header
+    typeEffect(h1, speed);
+    
+    // type affect to body
+    setTimeout(function(){
+      // p.style.display = "inline-block";
+      // var p = document.querySelector('p');
+      var p = document.createElement('p')
+      p.append('webdesigner')
+      document.body.append(p);
+      typeEffect(p, speed);
+    }, delay);
   }
 }
+
+function typeEffect(element: any, speed: any) {
+  var text = element.innerHTML;
+  element.innerHTML = "";
+  
+  var i = 0;
+  var timer = setInterval(function() {
+    if (i < text.length) {
+      element.append(text.charAt(i));
+      i++;
+    } else {
+      clearInterval(timer);
+    }
+  }, speed);
+};

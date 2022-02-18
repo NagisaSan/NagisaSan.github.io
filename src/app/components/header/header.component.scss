@@ -1,59 +1,35 @@
-.wrapper {
-    padding: 10px;
-    margin: 0 auto;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    .item {
-      visibility: hidden;
-      display: none;
-    }
-  
-    h2 {
-      font-size: 50px;
-      margin: 0;
-      color: #3a3a3a;
-      text-align: left;
-    }
-  
-    > div {
-      min-height: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: flex-end;
-      font-weight: bold;
-      color: rgb(63, 138, 134);
-      font-size: 6rem;
-      word-break: break-all;
-  
-      &:after {
-        content: "";
-        width: 3rem;
-        height: 0.5rem;
+h1 {
+    min-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: flex-end;
+    font-weight: bold;
+    color: orange;
+
+    &:after {
+      content: "";
+        width: 10px;
+        height: 4px;
         display: block;
-        background: black;
+        background: white;
         color: orange;
         margin-bottom: 4px;
         margin-left: 2px;
         animation-duration: 350ms;
         animation-name: fade;
         animation-direction: alternate;
-        animation-iteration-count: infinite;
-      }
+        animation-iteration-count: 4;
     }
   }
-  
-  @keyframes fade {
-    from {
-      opacity: 1;
-    }
-  
-    to {
-      opacity: 0;
-    }
+
+@keyframes fade {
+  from {
+    opacity: 0;
   }
-  
+
+  to {
+    opacity: 1;
+    background-color: black;
+  }
+}
