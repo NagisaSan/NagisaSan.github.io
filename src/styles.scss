@@ -3,7 +3,43 @@ html, body {
     font-family: monospace;
 }
 
-p {
+#heading0, #heading1 {
+    min-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: flex-end;
+    font-weight: bold;
+    color: orange;
+
+    &:after {
+      content: "";
+        width: 10px;
+        height: 4px;
+        display: block;
+        background: white;
+        color: orange;
+        margin-bottom: 4px;
+        margin-left: 2px;
+        animation-duration: 350ms;
+        animation-name: fade;
+        animation-direction: alternate;
+        animation-iteration-count: 4;
+    }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    background-color: black;
+  }
+}
+
+#heading2 {
     min-height: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -26,10 +62,9 @@ p {
         animation-direction: alternate;
         animation-iteration-count: infinite;
     }
-  }
+}
   
-  
-  @keyframes fade2 {
+@keyframes fade2 {
     from {
       opacity: 0;
     }
@@ -38,7 +73,4 @@ p {
       opacity: 1;
       background-color: black;
     }
-  }
-  
-  
-  
+}

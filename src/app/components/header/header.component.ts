@@ -9,33 +9,34 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { 
-    // application
+  ngOnInit(): void {
+    header_animation();
+  }
+
+}
+
+async function header_animation(): Promise<void> {
+  let header_text = ["Hello,", "I'm Cláudia", "Front-End Developer"];
+
+  for (var i = 0; i < header_text.length; i++) {
     var speed = 75;
-    var h1 = document.querySelector('h1');
+    var h1 = document.createElement('h1');
+    h1.setAttribute('id', 'heading' + i);
+    h1.append(header_text[i]);
+    document.body.appendChild(h1);
     var delay = h1.innerHTML.length * speed + speed;
-    
-    // type affect to header
+
     typeEffect(h1, speed);
-    
-    // type affect to body
-    setTimeout(function(){
-      // p.style.display = "inline-block";
-      // var p = document.querySelector('p');
-      var p = document.createElement('p')
-      p.append('webdesigner')
-      document.body.append(p);
-      typeEffect(p, speed);
-    }, delay);
+    await new Promise(r => setTimeout(r, delay));
   }
 }
 
 function typeEffect(element: any, speed: any) {
   var text = element.innerHTML;
   element.innerHTML = "";
-  
+
   var i = 0;
-  var timer = setInterval(function() {
+  var timer = setInterval(function () {
     if (i < text.length) {
       element.append(text.charAt(i));
       i++;
