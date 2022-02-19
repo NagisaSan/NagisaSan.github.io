@@ -23,7 +23,7 @@ async function header_animation(): Promise<void> {
     var h1 = document.createElement('h1');
     h1.setAttribute('id', 'heading' + i);
     h1.append(header_text[i]);
-    document.body.appendChild(h1);
+    document.getElementById('header').appendChild(h1);
     var delay = h1.innerHTML.length * speed + speed;
 
     typeEffect(h1, speed);

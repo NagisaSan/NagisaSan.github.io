@@ -1,6 +1,10 @@
 html, body {
-    margin: 0;
-    font-family: monospace;
+  margin: 0;
+  font-family: monospace !important;
+  height: 100vh;
+  background-color: #f9f9f9 !important;
+  background-image: radial-gradient(circle at top left, #efe6f1 15%, transparent 25%),
+                    radial-gradient(circle at bottom right, #efe6f1 15%, transparent 25%)
 }
 
 #heading0, #heading1 {
@@ -10,15 +14,15 @@ html, body {
     display: flex;
     align-items: flex-end;
     font-weight: bold;
-    color: orange;
+    color: #2f2929;
 
     &:after {
       content: "";
         width: 10px;
         height: 4px;
         display: block;
-        background: white;
-        color: orange;
+        background: transparent;
+        color: #2f2929;
         margin-bottom: 4px;
         margin-left: 2px;
         animation-duration: 350ms;
@@ -46,15 +50,15 @@ html, body {
     display: flex;
     align-items: flex-end;
     font-weight: bold;
-    color: orange;
+    color: #2f2929;
   
     &:after {
       content: "";
         width: 10px;
         height: 4px;
         display: block;
-        background: white;
-        color: orange;
+        background: transparent;
+        color: #2f2929;
         margin-bottom: 4px;
         margin-left: 2px;
         animation-duration: 350ms;
@@ -74,3 +78,10 @@ html, body {
       background-color: black;
     }
 }
+
+// common breakpoints
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV
