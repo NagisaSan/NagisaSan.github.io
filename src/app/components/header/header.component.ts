@@ -9,27 +9,25 @@ import { BehaviorSubject, from } from 'rxjs';
 export class HeaderComponent implements OnInit {
   currentSection: BehaviorSubject<String> = new BehaviorSubject('section1');
   sections: string[] = ['section1', 'section2'];
-  currentSectionCount: string | number = '1';
 
   constructor() {
-    document.addEventListener('scroll', () => { this.keepTrack() });
+    document.addEventListener('scroll', () => {
+      this.keepTrack()
+    });
   }
 
   ngOnInit(): void {
     header_animation();
   }
 
+  //#region navigation
   keepTrack() {
     const viewHeight = window.innerHeight;
     for (var section of this.sections) {
       const element = document.getElementById(section);
-      if (element != null) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top < viewHeight / 2) {
-          this.currentSection.next(section);
-          this.currentSectionCount = section.charAt(section.length - 1);
-        }
-      } else {
+      const rect = element.getBoundingClientRect();
+      if (rect.top >= 0 && rect.top < viewHeight / 2) {
+        this.currentSection.next(section);
       }
     }
   }
@@ -38,15 +36,32 @@ export class HeaderComponent implements OnInit {
     return document.getElementsByTagName("section").length;
   }
 
-  // goToNextSection(): void {
-  //   // let nextSection = (this.currentSectionCount as number)++;
-  //   console.log("section" + (this.currentSectionCount as number)++);
-  //   document.getElementById("section" + (this.currentSectionCount as number)++).scrollIntoView({
-  //     behavior: "smooth",
-  //     block: "start",
-  //     inline: "nearest"
-  //     });
-  // }
+  get currectSectionNumber(): number {
+    return +this.currentSection.value.charAt(this.currentSection.value.length - 1);
+  }
+
+  goToNextSection(): void {
+    let next_section = this.currectSectionNumber + 1;
+    if (next_section <= 2) {
+      document.getElementById("section" + next_section).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    }
+  }
+
+  goToPreviousSection(): void {
+    let next_section = this.currectSectionNumber - 1;
+    if(next_section > 0){
+      document.getElementById("section" + next_section).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    }
+  }
+  //#endregion
 }
 
 async function header_animation(): Promise<void> {

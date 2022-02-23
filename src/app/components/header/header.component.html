@@ -6,11 +6,11 @@
             <div class="date"><span>2022</span></div>
             <div class="page-navigation">
                 <div>
-                    <!-- <p>^</p> -->
-                    <p>{{currentSectionCount}}</p>
+                    <p (click)="goToPreviousSection()" style="cursor: pointer;">^</p>
+                    <p>{{currectSectionNumber}}</p>
                     <p>-</p>
                     <p>{{sectionsCount}}</p>
-                    <!-- <p (click)="goToNextSection()" style="cursor: pointer;">v</p> -->
+                    <p (click)="goToNextSection()" style="cursor: pointer;">v</p>
                 </div>
             </div>
             <div></div>
