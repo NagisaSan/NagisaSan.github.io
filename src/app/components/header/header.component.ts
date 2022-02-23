@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, from } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +7,46 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  currentSection: BehaviorSubject<String> = new BehaviorSubject('section1');
+  sections: string[] = ['section1', 'section2'];
+  currentSectionCount: string | number = '1';
 
-  constructor() { }
+  constructor() {
+    document.addEventListener('scroll', () => { this.keepTrack() });
+  }
 
   ngOnInit(): void {
     header_animation();
   }
 
+  keepTrack() {
+    const viewHeight = window.innerHeight;
+    for (var section of this.sections) {
+      const element = document.getElementById(section);
+      if (element != null) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top < viewHeight / 2) {
+          this.currentSection.next(section);
+          this.currentSectionCount = section.charAt(section.length - 1);
+        }
+      } else {
+      }
+    }
+  }
+
+  get sectionsCount(): number {
+    return document.getElementsByTagName("section").length;
+  }
+
+  // goToNextSection(): void {
+  //   // let nextSection = (this.currentSectionCount as number)++;
+  //   console.log("section" + (this.currentSectionCount as number)++);
+  //   document.getElementById("section" + (this.currentSectionCount as number)++).scrollIntoView({
+  //     behavior: "smooth",
+  //     block: "start",
+  //     inline: "nearest"
+  //     });
+  // }
 }
 
 async function header_animation(): Promise<void> {
@@ -27,7 +61,7 @@ async function header_animation(): Promise<void> {
     var delay = h1.innerHTML.length * speed + speed;
 
     typeEffect(h1, speed);
-    await new Promise(r => setTimeout(r, delay));
+    await new Promise(r => setTimeout(r, delay + 400));
   }
 }
 

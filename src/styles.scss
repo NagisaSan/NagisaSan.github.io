@@ -1,6 +1,6 @@
 html, body {
   margin: 0;
-  font-family: monospace !important;
+  font-family: 'Bayon', sans-serif;
   height: 100vh;
   background-color: #f9f9f9 !important;
   background-image: radial-gradient(circle at top left, #efe6f1 15%, transparent 25%),
@@ -18,8 +18,8 @@ html, body {
 
     &:after {
       content: "";
-        width: 10px;
-        height: 4px;
+        width: 18px;
+        height: 6px;
         display: block;
         background: transparent;
         color: #2f2929;
@@ -39,7 +39,7 @@ html, body {
 
   to {
     opacity: 1;
-    background-color: black;
+    background-color: #2f2929;
   }
 }
 
@@ -54,8 +54,8 @@ html, body {
   
     &:after {
       content: "";
-        width: 10px;
-        height: 4px;
+        width: 18px;
+        height: 6px;
         display: block;
         background: transparent;
         color: #2f2929;
@@ -75,7 +75,7 @@ html, body {
   
     to {
       opacity: 1;
-      background-color: black;
+      background-color: #2f2929;
     }
 }
 
