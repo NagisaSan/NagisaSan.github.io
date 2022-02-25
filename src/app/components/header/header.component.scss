@@ -42,6 +42,7 @@
 
     div {
         position: fixed;
+        text-align: center;
     }
 
     p {
@@ -49,6 +50,40 @@
         line-height: 1;
     }
 }
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+  
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.separator {
+    margin: 0.5rem 0;
+    height: 3px;
+    color: #2f2929 !important;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
 
 #header {
     align-items: flex-start;

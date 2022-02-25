@@ -2,15 +2,19 @@
     <div class="row animated_heading">
         <div class="col-2">hi</div>
         <div class="col-8" id="header"></div>
-        <div class="col-2 heading-right">
+        <div class="col-2 heading-right" style="font-family: 'Bayon', sans-serif;">
             <div class="date"><span>2022</span></div>
-            <div class="page-navigation">
+            <div class="page-navigation" style="font-family: 'Bayon', sans-serif;">
                 <div>
-                    <p (click)="goToPreviousSection()" style="cursor: pointer;">^</p>
+                    <p (click)="goToPreviousSection()">
+                        <i class="arrow up"></i>
+                    </p>
                     <p>{{currectSectionNumber}}</p>
-                    <p>-</p>
+                    <hr class="separator"/> 
                     <p>{{sectionsCount}}</p>
-                    <p (click)="goToNextSection()" style="cursor: pointer;">v</p>
+                    <p (click)="goToNextSection()">
+                        <i class="arrow down"></i>
+                    </p>
                 </div>
             </div>
             <div></div>
