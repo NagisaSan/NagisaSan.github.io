@@ -1,6 +1,5 @@
-.container {
+.container-fluid {
     height: 100vh;
-    // display: flex;
 }
 
 @media (max-width: 768px) {
@@ -15,7 +14,6 @@
     > div {
         height: inherit;
     }
-    // padding-left: 25%;
 }
 
 .heading-right {
@@ -43,6 +41,13 @@
     div {
         position: fixed;
         text-align: center;
+    }
+
+    .line-animation {
+        margin-right: 3.5px;
+        top: 0;
+        border-right: 2px solid #2f2929;
+        height: 45vh;
     }
 
     p {
@@ -76,8 +81,23 @@
     opacity: 1;
 }
 
+.heading-left {
+    display: grid;
 
+    .social-media {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
 
+    .line-animation {
+        bottom: 0;
+        border-left: 1px solid #2f2929;
+        position: absolute;
+        height: 45vh;
+    }
+    
+}
 
 
 

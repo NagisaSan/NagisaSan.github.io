@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    header_animation();
+    // header_animation();
   }
 
   //#region navigation

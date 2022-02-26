@@ -1,25 +1,49 @@
-<section class="container" id="section1">
+<section class="container-fluid" id="section1">
+    <div class="row">
+        <div class="col">
+            <div>
+                <span>about</span>
+                <span>XP</span>
+                <span>skills</span>
+                <span>blog</span>
+                <span>contact me</span>
+            </div>
+        </div>
+    </div>
     <div class="row animated_heading">
-        <div class="col-2">hi</div>
-        <div class="col-8" id="header"></div>
-        <div class="col-2 heading-right" style="font-family: 'Bayon', sans-serif;">
-            <div class="date"><span>2022</span></div>
-            <div class="page-navigation" style="font-family: 'Bayon', sans-serif;">
+        
+        <div class="col-1 heading-left">
+            <div class="social-media">
+                <p><i class="fa-brands fa-linkedin"></i></p>
+                <p><i class="fa-brands fa-github-square"></i></p>
+                <p><i class="fa-brands fa-codepen"></i></p>
+            </div>
+            <div class="line-animation">
+
+            </div>
+        </div>
+        <div class="col-10" id="header">
+            <h1 style="font-family: 'Cantarell', sans-serif;
+            font-family: 'Catamaran', sans-serif;
+            font-family: 'Monoton', cursive; font-size: 5.5rem;">portfolio</h1>
+        </div>
+        <div class="col-1 heading-right">
+            <div class="page-navigation">
+                <!-- <div class="line-animation"></div> -->
                 <div>
                     <p (click)="goToPreviousSection()">
                         <i class="arrow up"></i>
                     </p>
                     <p>{{currectSectionNumber}}</p>
-                    <hr class="separator"/> 
+                    <hr class="separator" />
                     <p>{{sectionsCount}}</p>
                     <p (click)="goToNextSection()">
                         <i class="arrow down"></i>
                     </p>
                 </div>
             </div>
-            <div></div>
         </div>
     </div>
 </section>
 
-<section class="container" id="section2">hey</section>
+<section class="container-fluid" id="section2">hey</section>

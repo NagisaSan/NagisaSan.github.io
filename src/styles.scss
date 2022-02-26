@@ -3,9 +3,13 @@ html, body {
   font-family: 'Bayon', sans-serif;
   height: 100vh;
   background-color: #f9f9f9 !important;
-  background-image: radial-gradient(circle at top left, #efe6f1 15%, transparent 25%),
-                    radial-gradient(circle at bottom right, #efe6f1 15%, transparent 25%)
+  background-image: radial-gradient(circle at top left, #ffe9d9  15%, transparent 25%),
+                    radial-gradient(circle at bottom right, #ffe9d9 15%, transparent 25%)
 }
+
+//colors: 
+//pink: #efe6f1
+//orange: #ffe9d9
 
 #heading0, #heading1 {
     min-height: 20px;
